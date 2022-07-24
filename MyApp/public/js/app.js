@@ -27,7 +27,7 @@ window.onload = async () => {
   }
 };
 
-//Add pizza to Cart
+//Add pizza to Cart and store cart in local storage variable
 const addPizza = async (id, name, price) => {
   item = new Object({
     id: id,
@@ -47,7 +47,7 @@ const addPizza = async (id, name, price) => {
   }
 };
 
-// Remove pizza from Cart
+// Remove pizza from Cart and from local storage
 const removePizza = async (itemid) => {
   CART = await JSON.parse(lGet('cart'))
   idx = CART.findIndex((i) => i.id == itemid)
