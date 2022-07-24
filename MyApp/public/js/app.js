@@ -27,7 +27,7 @@ window.onload = async () => {
   }
 };
 
-//Add pizza to Cart and store cart in local storage variable
+//Add pizza to Cart and store cart in local storage variable.
 const addPizza = async (id, name, price) => {
   item = new Object({
     id: id,
