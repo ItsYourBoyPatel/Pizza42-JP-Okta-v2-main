@@ -78,7 +78,7 @@ const updateHistory = async (items) => {
   if (!items) {
     document.getElementById("order-history").innerHTML = "No previous orders"
   } else {
-    str += "You've " + items.length + " previous orders"
+    str += "You have " + items.length + " previous orders"
     items.forEach((history, i) => {
       str += "<div style='border-style:double;'><p><b>Order Placed on :</b> " + history.time + "</p> "
       for ([key, value] of Object.entries(history)) {
