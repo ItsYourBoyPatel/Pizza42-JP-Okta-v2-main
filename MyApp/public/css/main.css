@@ -1,0 +1,21 @@
+
+
+.hidden {
+    display: none;
+  }
+
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+.background-color {
+
+  background-color: #8A9A5B;
+  position: absolute;
+  width: 51.5%;
+}
+
+.align {
+text-align: right;
+
+}

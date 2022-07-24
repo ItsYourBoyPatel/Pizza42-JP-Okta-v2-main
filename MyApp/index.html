@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pizza42 Online Website</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+
+<body>
+  <div style="text-align: center;">
+    <h1>Pizza42 Online Website</h1>
+    <div class="hidden" id="gated-content">
+      <label>
+        <b>User profile:</b>
+        <pre id="ipt-user-profile"></pre>
+      </label>
+    </div>
+    <h3>Select Pizzas</h3>
+    <div>
+      <p>Margherita Pizza</p>
+      <button id="add-pizza1" onclick="addPizza(1,'Margherita Pizza', 5)">Add to cart</button>
+      <button id="remove-pizza1" onclick="removePizza(1)">Remove</button>
+    </div>
+
+    <div>
+      <p>Double Cheese Pizza</p>
+      <button id="add-pizza2" onclick="addPizza(2,'Double Cheese Pizza',10)">Add to cart</button>
+      <button id="remove-pizza2" onclick="removePizza(2)">Remove</button>
+    </div>
+    <br>
+
+    <div>
+      <p id="pizzaList"></p>
+      <p id="subTotal"></p>
+      <p id="amount"></p>
+
+    </div>
+
+    <div>
+      <button id="btn-login" disabled="true" onclick="login()">Log in to place order</button>
+      <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+      <button id="btn-call-api" disabled="true" onclick="orderNow()">Order Now</button>
+    </div>
+    <br>
+    <div class="hidden" id="history-content">
+      <h3>Order History:</h3>
+      <div id="order-history"></div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+  </div>
+</body>
+<script src="https://cdn.auth0.com/js/auth0/9.19.0/auth0.min.js"></script>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.20/auth0-spa-js.production.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/ui.js"></script>
+
+</html>
