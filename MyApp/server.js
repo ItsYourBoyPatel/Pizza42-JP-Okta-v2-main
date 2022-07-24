@@ -108,6 +108,5 @@ app.use(function(err, req, res, next) {
 // Listen on port 3000
 //app.listen(3000, () => console.log("Application running on port 3000"));
 
-const app = require('../server');
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
