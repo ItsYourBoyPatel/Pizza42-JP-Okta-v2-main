@@ -1,13 +1,18 @@
 var auth0JP = null;
 var mgmt = null;
 var config = null
+//Initialize SDK
 var fetchAuthConfig = () => fetch("/auth_config.json");
 
-//Initialize Auth0 variable
+//Download the configuration file and initialize the auth0 variable:
+
+//This call will also populate the in-memory cache with a valid access token and user profile
+//information if someone has already authenticated before and that session is still valid.
+
 const configureClient = async () => {
   const response = await fetchAuthConfig();
   config = await response.json();
-
+  //Adding audience here is key as this is how it will connect your SPA
   auth0JP = await createAuth0Client({
     domain: config.domain,
     client_id: config.clientId,
@@ -33,6 +38,7 @@ const configureMgmt = async () => {
   });
   mgmt = new auth0.Management({
     domain: config.domain,
+    // Get the access token from the Auth0 client
     token: await auth0JP.getTokenSilently()
   });
 }
