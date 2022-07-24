@@ -1,4 +1,5 @@
 //Updating UI after User Authenticated and Logged in and Logged out Successfully
+//Evaluating the authentication state
 const updateUI = async () => {
   const isAuthenticated = await auth0JP.isAuthenticated();
   document.getElementById("btn-logout").disabled = !isAuthenticated;
@@ -59,7 +60,6 @@ const render_cart = async (items) => {
 };
 
 var ORDERS = []
-
 //Retrieve order histroy from User Auth0 session
 const render_orders = async () => {
   if (!mgmt) return null;
@@ -83,10 +83,10 @@ const updateHistory = async (items) => {
       str += "<div style='border-style:double;'><p><b>Order Placed on :</b> " + history.time + "</p> "
       for ([key, value] of Object.entries(history)) {
         if (key != "time" && key != "total") {
-          str += "<p><b>Name:</b>" + value.name + "  <b>Price</b>" + value.price + "  <b>Quantity:</b>" + value.count + "</p>"
+          str += "<p><b>Name: </b>" + value.name + "  <b>Price: </b>" + value.price + "  <b>Quantity: </b>" + value.count + "</p>"
         }
       }
-      str += "<p><b>Total:</b>" + history["total"] + "</p>"
+      str += "<p><b>Total: </b>" + history["total"] + "</p>"
       str += " </div><br>"
 
     });
